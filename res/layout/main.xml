@@ -1,0 +1,12 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:theme="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:layout_weight="1" >
+    <com.xlythe.saolauncher.extension.heart.theme.ThemedLinearLayout
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        theme:themeBackground="@drawable/player_info_top" />
+</RelativeLayout>

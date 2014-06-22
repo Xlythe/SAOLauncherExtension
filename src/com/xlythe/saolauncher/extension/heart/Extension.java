@@ -1,12 +1,12 @@
-package com.xlythe.saoheartextension;
+package com.xlythe.saolauncher.extension.heart;
 
 import android.content.Context;
 import android.view.View;
 import android.widget.ImageView;
 
-public class Extension implements ExtensionInterface {
+public class Extension extends ExtensionTemplate {
     @Override
-    public View getView(Context context) {
+    protected View inflateView(Context context) {
         ImageView iv = new ImageView(context);
         iv.setImageResource(R.drawable.heart);
         return iv;
@@ -18,11 +18,7 @@ public class Extension implements ExtensionInterface {
     }
 
     @Override
-    public void setButtonPos(int[] pos) {}
-
-    @Override
-    public void onResume() {}
-
-    @Override
-    public void onPause() {}
+    public String getInactiveImage() {
+        return "icon_heart";
+    }
 }

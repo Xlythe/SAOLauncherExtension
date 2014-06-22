@@ -1,4 +1,4 @@
-package com.xlythe.saoheartextension;
+package com.xlythe.saolauncher.extension.heart;
 
 import android.app.Activity;
 
