@@ -24,3 +24,6 @@ local.properties
 
 # Windows Stuff
 Thumbs.db
+.gradle/
+
+build/
