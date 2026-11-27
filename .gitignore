@@ -27,3 +27,8 @@ Thumbs.db
 .gradle/
 
 build/
+
+# Gradle wrapper files
+gradlew
+gradlew.bat
+**/gradle/wrapper/
