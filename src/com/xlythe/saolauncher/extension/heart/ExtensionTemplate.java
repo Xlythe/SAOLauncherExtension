@@ -17,8 +17,6 @@ import com.xlythe.saolauncher.extension.heart.theme.UIUtil;
 public abstract class ExtensionTemplate implements ExtensionInterface {
     private ThemedView mArrow;
     private View mLayout;
-    private LinearLayout.LayoutParams mArrowParams;
-    private LinearLayout.LayoutParams mLayoutParams;
     private Context mContext;
     private String mSide;
     private Typeface mTypeface;
@@ -80,19 +78,10 @@ public abstract class ExtensionTemplate implements ExtensionInterface {
         // Adjust arrow position
         int distance = pos[1];
         distance -= getArrowSize() / 2;
-        mArrowParams = (LinearLayout.LayoutParams) mArrow.getLayoutParams();
-        mArrowParams.topMargin = distance;
+        int height = ((View) mLayout.getParent()).getHeight();
+        mArrow.setTranslationY(Math.max(0, Math.min(height - getArrowSize(), distance)));
+        mLayout.setTranslationY(Math.max(0, Math.min(height - mLayout.getHeight(), distance)));
 
-        // Adjust the card to align with the arrow
-        int layoutHeight = mLayout.getHeight();
-        int windowHeight = UIUtil.getWindowHeight(mContext);
-        mLayoutParams = ((LinearLayout.LayoutParams) mLayout.getLayoutParams());
-        if(distance + layoutHeight > windowHeight) {
-            mLayoutParams.topMargin = windowHeight - layoutHeight;
-        }
-        else {
-            mLayoutParams.topMargin = distance;
-        }
     }
 
     @Override
